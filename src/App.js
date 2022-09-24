@@ -4,7 +4,7 @@ import {useState} from 'react';
 import Header from './components/Header';
 import ContactForm from './components/ContactForm';
 import Contact from './components/Contact';
-import {Box,Grid} from '@mui/material';
+import {Box,Grid,Card} from '@mui/material';
 
 // Uncomment untuk memuat daftar kontak
 import contactsJSON from './data/contacts.json';
@@ -33,11 +33,17 @@ const App = () => {
       <Header />
       <Box display="flex" justifyContent="center" alignItems="center">
 
-          <Grid xs={4} sx={{ m: 3 }}  >
+          <Grid sx={{ m: 3 }}  >
             <ContactForm fntambahkontak={tambahkontak}/>
           </Grid>
-          <Grid xs={4} sx={{ m: 3 }} >
-            <Contact data={contact}/>
+          <Grid sx={{ m: 3 }} >
+            <Card variant="outlined" sx={{ minWidth: 400, padding:1}} >
+              {
+                contact.map((isi) => (
+                  <Contact data={isi}/>
+                ))
+              }
+            </Card>
           </Grid>
       </Box>
     </div>

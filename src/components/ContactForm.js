@@ -33,19 +33,19 @@ const ContactForm = ({fntambahkontak}) => {
     return (
         <form onSubmit={fnOnSubmitKontak}>
             <Card variant="outlined" sx={{ minWidth: 400 }} >
-                <Grid xs="auto" sx={{ margin: 2 }}>
+                <Grid sx={{ margin: 2 }}>
                     <TextField id="Name" label="Name *" variant="filled" fullWidth value={inputName} onChange={fnOnChangeName}/>
                 </Grid>
-                <Grid xs="auto" sx={{ margin: 2 }}>
+                <Grid sx={{ margin: 2 }}>
                     <TextField id="Phone" label="Phone *" variant="filled" fullWidth value={inputPhone} onChange={fnOnChangePhone}/>
                 </Grid>
-                <Grid xs="auto" sx={{ margin: 2 }}>
+                <Grid sx={{ margin: 2 }}>
                     <TextField id="Email" label="Email *" variant="filled" fullWidth value={inputEmail} onChange={fnOnChangeEmail}/>
                 </Grid>
-                <Grid xs="auto" sx={{ margin: 2 }}>
+                <Grid sx={{ margin: 2 }}>
                     <TextField id="Photourl" label="Photo URL" variant="filled" fullWidth value={inputPhotourl} onChange={fnOnChangePhotourl}/>
                 </Grid>
-                <Grid xs="auto" sx={{ margin: 2 }}>
+                <Grid sx={{ margin: 2 }}>
                     <Button type="submit" variant="outlined">Add</Button>
                 </Grid>
             </Card>

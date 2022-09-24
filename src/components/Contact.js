@@ -3,41 +3,26 @@
 // https://mui.com/material-ui/react-list/#folder-list
 import React from 'react';
 import './contact.css';
-import {Card,Grid,Typography,Divider} from '@mui/material';
-import contactsJSON from '../data/contacts.json';
+import {Grid,Typography,Divider} from '@mui/material';
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
 // atau langsung tambahkan dengan sx={{}}
 const Contact = ({ data }) => {
     // Contact berisi foto, nama, telepon, dan email
-    let kontak = {};
-    if (Array.isArray(data)){
-        kontak = data;
-    }else{
-        kontak = contactsJSON;
-    }
     return (
-        <Card variant="outlined" sx={{ minWidth: 400, padding:1}} >
-            {
-                kontak.map((isi)=>{
-                    return (
-                        <>
-                        <Grid container spacing={0} key={isi.phone}>
-                            <Grid md ={3}>
-                                <img src={isi.photo} className="foto"/>
-                            </Grid>
-                            <Grid md ={9} >
-                                <Typography variant="h5" align="left">{isi.name}</Typography>
-                                <Typography align="left">{isi.phone}</Typography>
-                                <Typography align="left">{isi.email}</Typography>
-                            </Grid>
-                        </Grid>
-                        <Divider variant="middle" />
-                        </>
-                    )
-                })
-            }
-        </Card>
+            <>
+            <Grid container spacing={0} key={data.phone}>
+                <Grid item md ={3}>
+                    <img src={data.photo} alt="foto" className="foto"/>
+                </Grid>
+                <Grid item md ={9} >
+                    <Typography variant="h5" align="left">{data.name}</Typography>
+                    <Typography align="left">{data.phone}</Typography>
+                    <Typography align="left">{data.email}</Typography>
+                </Grid>
+                </Grid>
+            <Divider variant="middle" />
+            </>
     );
 };
 
