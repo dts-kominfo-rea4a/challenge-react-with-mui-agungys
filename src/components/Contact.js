@@ -4,17 +4,22 @@
 import React from 'react';
 import './contact.css';
 import {Card,Grid,Typography,Divider} from '@mui/material';
+import contactsJSON from '../data/contacts.json';
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
 // atau langsung tambahkan dengan sx={{}}
 const Contact = ({ data }) => {
     // Contact berisi foto, nama, telepon, dan email
-    
-
+    let kontak = {};
+    if (Array.isArray(data)){
+        kontak = data;
+    }else{
+        kontak = contactsJSON;
+    }
     return (
         <Card variant="outlined" sx={{ minWidth: 400, padding:1}} >
             {
-                data.map((isi)=>{
+                kontak.map((isi)=>{
                     return (
                         <>
                         <Grid container spacing={0} key={isi.phone}>

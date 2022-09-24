@@ -15,7 +15,7 @@ const App = () => {
 
   // Masukkan contacts yang sudah didapat dalam JSON sebagai initial state
   // Buatlah handler untuk menambahkan kontak baru yang akan dikirim ke ContactForm
-  const[kontak,setkontak] = useState(contactsJSON);
+  const[contact,setcontact] = useState(contactsJSON);
 
   const tambahkontak = (name,phone,email,photourl) => {
     const objdatacontact = {
@@ -25,7 +25,7 @@ const App = () => {
       "photo": photourl
     }
 
-    setkontak([...kontak,objdatacontact]);
+    setcontact([...contact,objdatacontact]);
   }
 
   return (
@@ -37,7 +37,7 @@ const App = () => {
             <ContactForm fntambahkontak={tambahkontak}/>
           </Grid>
           <Grid xs={4} sx={{ m: 3 }} >
-            <Contact data={kontak}/>
+            <Contact data={contact}/>
           </Grid>
       </Box>
     </div>
